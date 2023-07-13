@@ -1,22 +1,19 @@
 import argparse
-import yaml
-from ml_collections import ConfigDict
 import os
-import random
-import numpy as np
-from tqdm import tqdm
+import warnings
+
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
-from torch.optim import Adam, RMSprop, AdamW
-from torch.utils.data import DataLoader
+import yaml
+from ml_collections import ConfigDict
 from torch.cuda.amp.grad_scaler import GradScaler
+from torch.optim import Adam
+from torch.utils.data import DataLoader
+from tqdm import tqdm
 
-from utils import manual_seed
-from tfc_tdf_v3 import TFC_TDF_net, STFT
 from dataset import MSSDatasets
-
-import warnings
+from tfc_tdf_v3 import TFC_TDF_net
+from utils import manual_seed
 
 warnings.filterwarnings("ignore")
 
